@@ -1,11 +1,15 @@
-import React from 'react'
+import React from "react";
+import Header from "./Header";
+import Footer from "./Footer";
 
-function Loyout() {
+function Loyout({ children }) {
     return (
-        <div>
-
-        </div>
-    )
+        <>
+            <Header />
+            <div>{children}</div>
+            <Footer />
+        </>
+    );
 }
 
-export default Loyout
+export default Loyout;
