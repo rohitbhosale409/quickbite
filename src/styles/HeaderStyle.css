@@ -1,4 +1,4 @@
-/* header css */
+/* Header CSS */
 header .navbar {
     position: absolute;
     width: 100%;
@@ -6,19 +6,20 @@ header .navbar {
     z-index: 1000;
 }
 
-/* sticky navbar */
 header .navbar.sticky {
     position: fixed;
     left: 0;
     top: 0;
     background-color: var(--white);
-    -webkit-transition: all 0.15s ease-in-out;
-    -moz-transition: all 0.15s ease-in-out;
-    -o-transition: all 0.15s ease-in-out;
-    -ms-transition: all 0.15s ease-in-out;
-    transition: all 0.15s ease-in-out;
+    -webkit-transition: all 15ms ease-in-out;
+    -moz-transition: all 15ms ease-in-out;
+    -o-transition: all 15ms ease-in-out;
+    -ms-transition: all 15ms ease-in-out;
+    transition: all 15ms ease-in-out;
     animation-name: stickyTransition;
+    -webkit-animation-duration: 0.5s;
     animation-duration: 0.5s;
+    -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
     -webkit-box-shadow: 0 2px 3px rgba(96, 96, 96, 0.1);
     -moz-box-shadow: 0 2px 3px rgba(96, 96, 96, 0.1);
@@ -28,21 +29,24 @@ header .navbar.sticky {
 @keyframes stickyTransition {
     0% {
         opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
         transform: translate3d(0, -100%, 0);
     }
 
     100% {
         opacity: 1;
+        -webkit-transform: none;
         transform: none;
     }
 }
 
 header .logo img {
     width: auto;
-    max-width: 80px;
+    max-width: inherit;
+    max-height: 80px;
 }
 
-header .nav-Link {
+header .nav-link {
     display: inline-flex;
     justify-content: center;
     color: var(--white);
@@ -53,22 +57,20 @@ header .nav-Link {
     text-transform: uppercase;
     -webkit-transition: all 15ms ease-in-out;
     -ms-transition: all 15ms ease-in-out;
-    -webkit-transition: all 15ms ease-in-out;
     -o-transition: all 15ms ease-in-out;
     -moz-transition: all 15ms ease-in-out;
     transition: all 15ms ease-in-out;
-
 }
 
-header .navbar.sticky .nav-Link {
+header .sticky .nav-link {
     color: var(--light-black);
 }
 
-header .nav-Link {
+header .nav-link:hover {
     color: var(--yellow);
 }
 
-header .card {
+header .cart {
     position: relative;
     top: -0.4375rem;
 }
@@ -86,4 +88,31 @@ header .roundpoint {
     position: absolute;
     top: 3.2px;
     right: -8px;
+}
+
+/* Media Query CSS */
+
+@media (max-width: 992px) {
+    header .navbar {
+        background-color: var(--white);
+    }
+
+    header .navbar-toggler {
+        border: none;
+    }
+
+    header .navbar-toggler:focus {
+        outline: none;
+        box-shadow: none;
+    }
+
+    header .navbar-toggler-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    header .nav-link {
+        color: var(--light-black);
+        padding: 1rem !important;
+    }
 }

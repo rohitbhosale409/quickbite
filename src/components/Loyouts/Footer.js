@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer() {
     return (
-        <div style={{ textAlign: "center", padding: "10px" }}>
+        <div>
             Footer
         </div>
     );

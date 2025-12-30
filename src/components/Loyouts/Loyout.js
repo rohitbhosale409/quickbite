@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 
-function Loyout({ children }) {
+function Layout({ children }) {
     return (
         <>
             <Header />
@@ -12,4 +12,4 @@ function Loyout({ children }) {
     );
 }
 
-export default Loyout;
+export default Layout;
